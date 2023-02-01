@@ -23,6 +23,7 @@ import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextDirection.Companion.Content
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import kr.pe.upj53.myjetpackcompose.ui.theme.MyJetpackComposeTheme
@@ -43,9 +44,8 @@ class MainActivity : ComponentActivity() {
 
 @Composable
 fun CreateBizCard() {
-	val buttonClickedState = remember {
-		mutableStateOf(false)
-	}
+	// code here
+
 	Surface(modifier = Modifier.fillMaxWidth().fillMaxHeight()) {
 		Card(
 			modifier = Modifier
@@ -64,18 +64,11 @@ fun CreateBizCard() {
 				Divider()
 				CreateInfo()
 				Button(onClick = {
-					buttonClickedState.value = !buttonClickedState.value
+					// code here
+
 				}) {
-					Text(
-						"나의 포트폴리오",
-						style = MaterialTheme.typography.button
-					)
-				}
-				if (buttonClickedState.value) {
-					Content()
-				} else {
-					Box {}
-				}
+				// code here
+
 			}
 		}
 	}
@@ -90,50 +83,15 @@ fun Content() {
 			.fillMaxWidth()
 			.padding(5.dp)
 	) {
-		Surface(
-			modifier = Modifier.padding(3.dp)
-				.fillMaxWidth()
-				.fillMaxHeight(),
-			shape = RoundedCornerShape(corner = CornerSize(6.dp)),
-			border = BorderStroke(width = 2.dp, color = Color.LightGray)
-		) {
-			Portfolio(data = listOf(
-				"프로젝트 A3", "프로젝트 B1", "프로젝트 C2",
-				"프로젝트 D7", "프로젝트 E9", "프로젝트 F14", "프로젝트 G4"
-			))
-		}
+		// code here
+
 	}
 }
 
 @Composable
 fun Portfolio(data: List<String>) {
 	LazyColumn {
-		items(data) { item ->
-			Card(
-				modifier = Modifier
-					.padding(13.dp)
-					.fillMaxWidth(),
-				shape = RectangleShape,
-				elevation = 4.dp,
-			) {
-				Row(
-					modifier = Modifier
-						.padding(16.dp)
-						.background(MaterialTheme.colors.surface)
-				) {
-					CreateImageProfile(modifier = Modifier.size(70.dp))
-					Column(
-						modifier = Modifier.padding(7.dp).align(alignment = Alignment.CenterVertically)
-					) {
-						Text(text = item, fontWeight = FontWeight.Bold)
-						Text(
-							text = "Awesome Project",
-							style = MaterialTheme.typography.body2
-						)
-					}
-				}
-			}
-		}
+		// code here
 	}
 }
 
